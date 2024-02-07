@@ -1,19 +1,19 @@
-// Postive and negative both
+// Positive and negative both
 #include <iostream>
 using namespace std;
 
 // Function to perform counting sort on an array
-void countingSort (int orginalSize, int minValue, int maxValue, int orginalArray[])
+void countingSort (int originalSize, int minValue, int maxValue, int originalArray[])
 {
     int range = maxValue - minValue; // Calculating the range of the given array
     int counterArray[range+1] = {0}; // Initialized the occurrences tracker array with zero
-    int sortedArray[orginalSize]; // Storing sorted array here
+    int sortedArray[originalSize]; // Storing sorted array here
 
-    // Subtracting the smallest value from orginal array elements, and counting occurrences of each element
-    for (int i = 0; i < orginalSize; i++)
+    // Subtracting the smallest value from original array elements, and counting occurrences of each element
+    for (int i = 0; i < originalSize; i++)
     {
-        orginalArray[i] -= minValue; // Creating positive sortable array by subtruction
-        counterArray[orginalArray[i]]++; // Incrementing the value of the counter array, where the original array's element is the index
+        originalArray[i] -= minValue; // Creating positive sortable array by subtruction
+        counterArray[originalArray[i]]++; // Incrementing the value of the counter array, where the original array's element is the index
     }
 
     // Calculating 'running sum' of counter array
@@ -23,17 +23,17 @@ void countingSort (int orginalSize, int minValue, int maxValue, int orginalArray
     }
 
     // Sorted array placement
-    for (int i = 0; i < orginalSize; i++)
+    for (int i = 0; i < originalSize; i++)
     {
         // Assigning the real value by addition
-        sortedArray[--counterArray[orginalArray[i]]] = orginalArray[i] += minValue;
+        sortedArray[--counterArray[originalArray[i]]] = originalArray[i] += minValue;
         // The original array's element is the index of the counter array, and the counter array's element is the index of the sorted array
     }
 
     // Assigning the sorted array back to the original array  
-    for (int i = 0; i < orginalSize; i++)
+    for (int i = 0; i < originalSize; i++)
     {
-        orginalArray[i] = sortedArray[i];
+        originalArray[i] = sortedArray[i];
     }
 }
 
