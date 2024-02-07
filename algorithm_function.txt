@@ -1,0 +1,11 @@
+Countingsort(Passed orginalArraysize, maximum value, an orginalArray)
+	Define a counterArray of size maximum value + 1 and initialize it with zero.
+	Define a sortedArray of size orginalArraysize.
+
+	Iterate through each element in orginalArray:
+		Count the occurrences of each element in orginalArray and update Counter_Array accordingly.
+	Iterate through each element in counterAray:
+		Calculate the running sum of Counter_Array.
+	Iterate through each element in orginalArray:
+		Use orginalArray element as the index to decrement the count of the current element in Counter_Array.
+		Use the decremented count as the index to place the current element in sortedArray.

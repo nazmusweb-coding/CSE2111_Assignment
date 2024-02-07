@@ -1,0 +1,14 @@
+advancedCountingsort(Passed orginalArraysize, minimum value, maximum value, an orginalArray)
+	Define a range variable and assign subtraction of maximum value and minimum value
+	Define a counterArray of size maximum value + 1 and initialize it with zero.
+	Define a sortedArray of size orginalArraysize.
+
+	Iterate through each element in orginalArray:
+		Subtract minimum value from current element of orginalArray.
+		Count the occurrences of each element in orginalArray and update Counter_Array accordingly.
+	Iterate through each element in counterAray:
+		Calculate the running sum of Counter_Array.
+	Iterate through each element in orginalArray:
+		Use orginalArray element as the index to decrement the count of the current element in Counter_Array.
+		Use the decremented count as the index to place the current element with addition of current element of originalArray and minimum value in sortedArray.
+	
